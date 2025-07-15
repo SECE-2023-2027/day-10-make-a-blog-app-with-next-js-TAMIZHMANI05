@@ -10,7 +10,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }) {
-  const post = getBlogPost(params.id);
+  const {id} = await params;
+  const post = getBlogPost(id);
   
   if (!post) {
     return {
@@ -24,8 +25,9 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default function BlogPost({ params }) {
-  const post = getBlogPost(params.id);
+export default async function BlogPost({ params }) {
+  const {id} = await params;
+  const post = getBlogPost(id);
   
   if (!post) {
     notFound();
