@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getAllBlogPosts } from "@/data/blogPosts";
+import UserProfile from "@/components/UserProfile";
 
 function BlogCard({ post, isLarge = false }) {
   if (isLarge) {
@@ -135,25 +136,28 @@ export default function Home() {
                   Next.js Insights
                 </h1>
               </div>
-              <div className="hidden md:flex items-center gap-6 text-white/90">
-                <a
-                  href="#latest"
-                  className="hover:text-white transition-colors"
-                >
-                  Latest
-                </a>
-                <a
-                  href="#tutorials"
-                  className="hover:text-white transition-colors"
-                >
-                  Tutorials
-                </a>
-                <a
-                  href="#guides"
-                  className="hover:text-white transition-colors"
-                >
-                  Guides
-                </a>
+              <div className="flex items-center gap-6">
+                <div className="hidden md:flex items-center gap-6 text-white/90">
+                  <a
+                    href="#latest"
+                    className="hover:text-white transition-colors"
+                  >
+                    Latest
+                  </a>
+                  <a
+                    href="#tutorials"
+                    className="hover:text-white transition-colors"
+                  >
+                    Tutorials
+                  </a>
+                  <a
+                    href="#guides"
+                    className="hover:text-white transition-colors"
+                  >
+                    Guides
+                  </a>
+                </div>
+                <UserProfile />
               </div>
             </div>
           </nav>
